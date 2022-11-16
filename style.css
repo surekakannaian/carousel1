@@ -1,0 +1,75 @@
+
+.carousel{
+    height: 400px;
+    width: 800px;
+  border: 2px solid rgb(17, 17, 17);
+  margin:50px auto;
+  position: relative;
+  display: block;
+}
+.carousel-item{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  transition: all 2s ease;
+  opacity: 0;
+}
+.arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+}
+.arrow-prev{
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+}
+.arrow-next{
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+[id^="item"]{
+    display: none;
+}
+.first{
+    z-index: 2;
+    opacity: 1;
+background-image: url("https://www.simplilearn.com/ice9/free_resources_article_thumb/Best-Programming-Languages-to-Start-Learning-Today.jpg");   background-position: 0px; 
+   background-size: cover;
+}
+
+.second{
+    background-image: url("https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/Python_logo-512.png");
+    background-repeat: no-repeat;
+background-position: 300px;
+background-size: 200px;
+background-color: greenyellow;}
+
+.third{
+    background-image: url("https://cdn-icons-png.flaticon.com/512/152/152760.png");
+    background-repeat: no-repeat;
+    background-color: blueviolet;
+    background-size: 200px;
+    background-position: 300px;
+}
+*:target~ .first{
+    opacity: 0;
+}
+#first:target~ .first{
+    opacity: 1;
+}
+#second:target~ .second , #third:target~ .third{
+opacity: 1;
+z-index: 3;
+}
+.para{
+    font-size: 100px;
+    position: absolute;
+    left: 100px;
+}
